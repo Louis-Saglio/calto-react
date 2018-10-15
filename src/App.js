@@ -69,8 +69,8 @@ class Calculator extends Component {
         return (
             <div>
                 <p>{this.state.firstExp == null ? '0' : this.state.firstExp} {this.state.nextOperation} {this.state.secondExp}</p>
-                {this.state.numbers.map(number => <Button onClick={(e) => this.click(e.target.innerHTML)} text={number}/>)}
-                {Object.keys(this.state.operations).map(operation => <Button onClick={(e) => this.setOperation(e.target.innerHTML)} text={operation}/>)}
+                {this.state.numbers.map(number => <Button onClick={() => this.click(number)} text={number}/>)}
+                {Object.keys(this.state.operations).map(operation => <Button onClick={() => this.setOperation(operation)} text={operation}/>)}
                 <Button onClick={() => this.clear()} text='AC'/>
                 <Button onClick={() => this.run()} text='='/>
             </div>
