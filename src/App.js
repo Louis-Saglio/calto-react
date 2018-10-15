@@ -38,6 +38,7 @@ class Calculator extends Component {
     }
 
     setOperation(operation) {
+        this.run();
         this.setState({
             nextOperation: operation,
             _isSecond: true
