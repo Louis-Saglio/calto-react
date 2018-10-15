@@ -48,7 +48,7 @@ class Calculator extends Component {
     clear() {
         this.setState({
             nextOperation: null,
-            _isSecond: true,
+            _isSecond: false,
             firstExp: null,
             secondExp: null
         })
