@@ -12,7 +12,6 @@ class Calculator extends Component {
     constructor() {
         super();
         this.state = {
-            expression: '0',
             numbers: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'],
             operations: {
                 '+': (x, y) => x + y,
@@ -38,6 +37,9 @@ class Calculator extends Component {
     }
 
     setOperation(operation) {
+        if (this.state.firstExp === null) {
+            this.setState({firstExp : 0})
+        }
         this.run();
         this.setState({
             nextOperation: operation,
